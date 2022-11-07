@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="output"></ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+      let data = [
+        {
+          division: "営業部",
+          person: [
+            { name: "山田", age: 21 },
+            { name: "佐藤", age: 56 },
+            { name: "鈴木", age: 33 },
+          ],
+        },
+        {
+          division: "設計部",
+          person: [
+            { name: "阿部", age: 45 },
+            { name: "藤沢", age: 55 },
+            { name: "山田", age: 21 },
+          ],
+        },
+      ];
+      //   alert("name: " + data.name + "age:" + data.age);
+
+      //   for (var i in data) {
+      //     $("#output").append(
+      //       "<li>" + data[i].name + "(" + data[i].age + ")" + "</li>"
+      //     );
+      //   }
+
+      for (let i in data) {
+        $("#output").append(
+          "<li><strong>" + data[i].division + "</storage></li>"
+        );
+        for (let j in data[i].person) {
+          $("#output").append(
+            "<li>" +
+              data[i].person[j].name +
+              "(" +
+              data[i].person[j].age +
+              ")</li>"
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
